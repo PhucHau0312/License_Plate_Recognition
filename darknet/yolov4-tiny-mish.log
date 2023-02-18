@@ -1,0 +1,40 @@
+ CUDNN_HALF=1 
+ Prepare additional network for mAP calculation...
+net.optimized_memory = 0 
+mini_batch = 1, batch = 1, time_steps = 1, train = 0 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+yolov4-tiny-mish
+net.optimized_memory = 0 
+mini_batch = 64, batch = 64, time_steps = 1, train = 1 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+
+ seen 64, trained: 0 K-images (0 Kilo-batches_64) 
+Learning Rate: 0.00261, Momentum: 0.9, Decay: 0.0005
+ Detection layer: 30 - type = 28 
+ Detection layer: 37 - type = 28 
+Loaded: 17.864453 seconds
+
+ (next mAP calculation at 2000 iterations) 
+ 1: 209.003815, 209.003815 avg loss, 0.000000 rate, 0.190533 seconds, 64 images, -1.000000 hours left
+Loaded: 18.968765 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ (next mAP calculation at 2000 iterations) 
+ 2: 213.303268, 209.433762 avg loss, 0.000000 rate, 0.164902 seconds, 128 images, 351.070392 hours left
+Loaded: 18.909567 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ (next mAP calculation at 2000 iterations) 
+ 3: 210.264252, 209.516815 avg loss, 0.000000 rate, 0.156339 seconds, 192 images, 351.280087 hours left
+Loaded: 17.196338 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ (next mAP calculation at 2000 iterations) 
+ 4: 212.358444, 209.800980 avg loss, 0.000000 rate, 0.169931 seconds, 256 images, 351.474435 hours left
+Loaded: 19.287301 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ (next mAP calculation at 2000 iterations) 
+ 5: 208.676849, 209.688568 avg loss, 0.000000 rate, 0.162054 seconds, 320 images, 351.336346 hours left
+Loaded: 16.458214 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ (next mAP calculation at 2000 iterations) 
+ 6: 207.881165, 209.507828 avg loss, 0.000000 rate, 0.164929 seconds, 384 images, 351.604576 hours left
