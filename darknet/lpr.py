@@ -6,8 +6,8 @@ import traceback
 import argparse
 import darknet
 from wpod_src.keras_utils 			import load_model
-from os.path 					          import splitext, basename
-from wpod_src.utils 				    import im2single
+from os.path 					    import splitext, basename
+from wpod_src.utils 				import im2single
 from wpod_src.keras_utils 			import load_model, detect_lp
 
 
