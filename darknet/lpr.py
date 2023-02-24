@@ -6,14 +6,14 @@ import traceback
 import argparse
 import darknet
 from wpod_src.keras_utils 			import load_model
-from os.path 					    import splitext, basename
-from wpod_src.utils 				import im2single
+from os.path 					          import splitext, basename
+from wpod_src.utils 				    import im2single
 from wpod_src.keras_utils 			import load_model, detect_lp
 
 
 
 def resize_bbox(detections, out_size, in_size):
-
+    
     detections = list(detections)
     for det in detections:
         det = list(det)
@@ -106,12 +106,16 @@ def main():
     side  = int(ratio*288.)
     bound_dim = min(side + (side%(2**4)),608)
     
-    Llp,LlpImgs,_ = detect_lp(wpod_net,im2single(Ivehicle),bound_dim,2**4,(240,80),lp_threshold)
-
+    Llp,LlpImgs,_,points = detect_lp(wpod_net,im2single(Ivehicle),bound_dim,2**4,(240,80),lp_threshold)
+    
+    pt = points[0]
+    pt = np.array([pt[0,:],pt[1,:],pt[2,:],pt[3,:]], np.int32)
+    pts = pt.reshape((-1,1,2))
+    Ip = cv2.polylines(im2single(Ivehicle),[pts],True,(0,255,0),2)
+    
     if len(LlpImgs):
         Ilp = LlpImgs[0]
-        # cv2.imshow('crop', Ilp)
-
+        
     text = []
     if len(Ilp): 
         Ilp = np.array(Ilp*255.0, dtype=np.uint8)
@@ -121,9 +125,9 @@ def main():
             text.append(det[0])
         text = ''.join(text)
         print(text)
-        # cv2.imshow('image', image)
 
-    cv2.imwrite('%s/%s_output.jpg' % (output_dir, bname), image)
+    cv2.putText(Ip,text,pt[0],cv2.FONT_HERSHEY_SIMPLEX,0.5,(0, 0, 255),2,cv2.LINE_AA)
+    cv2.imwrite('%s/%s_output.jpg' % (output_dir, bname), Ip*255.0)
     cv2.waitKey(0)
 
 
