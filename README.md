@@ -19,3 +19,7 @@ Run training_yolov4_for_character.ipynb to train
 ## Testing
 
 Run darknet/lpr.py --input_dir "your image path"
+
+## References
+
+https://github.com/AlexeyAB/darknet
