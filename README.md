@@ -8,7 +8,7 @@ Paper YOLO v4: https://arxiv.org/abs/2004.10934
 
 ## Prepare dataset 
 
-Prepare your character dataset or download dataset: https://paperswithcode.com/dataset/aolp
+Prepare your character dataset or download dataset: [license plate dataset](https://thigiacmaytinh.com/tai-nguyen-xu-ly-anh/tong-hop-data-xu-ly-anh/?fbclid=IwAR2tajA5Ku83kIrb09ovhmb_68Zmdwo9KvV_CSNBCTbuIIsiK_FUM4W4Dh8)
 
 ## Training 
 
